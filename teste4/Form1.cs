@@ -12,6 +12,7 @@ namespace teste4
         public Form1()
         {
             InitializeComponent();
+            this.Text = "Login do Professor";
         }
 
         private void InitializeComponent()
@@ -21,18 +22,20 @@ namespace teste4
             this.btnEntrar = new Button();
             this.SuspendLayout();
 
-            // Configuração do TextBox de login
+            // Configuração do TextBox de Login
             this.txtLogin.Location = new System.Drawing.Point(100, 50);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(200, 20);
             this.txtLogin.TabIndex = 0;
+            this.txtLogin.PlaceholderText = "Login";
 
-            // Configuração do TextBox de senha
+            // Configuração do TextBox de Senha
             this.txtSenha.Location = new System.Drawing.Point(100, 80);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.PasswordChar = '*';
             this.txtSenha.Size = new System.Drawing.Size(200, 20);
             this.txtSenha.TabIndex = 1;
+            this.txtSenha.PlaceholderText = "Senha";
+            this.txtSenha.PasswordChar = '*';
 
             // Configuração do botão Entrar
             this.btnEntrar.Location = new System.Drawing.Point(150, 120);
@@ -48,9 +51,6 @@ namespace teste4
             this.Controls.Add(this.btnEntrar);
             this.Controls.Add(this.txtSenha);
             this.Controls.Add(this.txtLogin);
-            this.Name = "Form1";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Tela de Login";
             this.ResumeLayout(false);
             this.PerformLayout();
         }
@@ -62,12 +62,12 @@ namespace teste4
 
             if (string.IsNullOrEmpty(login) || string.IsNullOrEmpty(senha))
             {
-                MessageBox.Show("Por favor, preencha o login e a senha.", "Campos obrigatórios", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Por favor, preencha todos os campos obrigatórios.", "Erro de Login", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                Teste05Form teste05Form = new Teste05Form();
-                teste05Form.Show();
+                Teste5Form teste5Form = new Teste5Form();
+                teste5Form.Show();
                 this.Hide();
             }
         }

@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace teste4
 {
-    public partial class Teste05Form : Form
+    public partial class Teste5Form : Form
     {
         private TextBox txtNome;
         private TextBox txtNota1;
@@ -16,9 +16,10 @@ namespace teste4
         private Button btnEnviar;
         private Label lblResultado;
 
-        public Teste05Form()
+        public Teste5Form()
         {
             InitializeComponent();
+            this.Text = "Lançamento de Notas";
         }
 
         private void InitializeComponent()
@@ -39,21 +40,21 @@ namespace teste4
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new Size(200, 20);
             this.txtNome.TabIndex = 0;
-            this.txtNome.PlaceholderText = "Nome do Aluno";
+            this.txtNome.PlaceholderText = "Nome do Aluno:";
 
             // Configuração do TextBox de Nota1
             this.txtNota1.Location = new Point(100, 80);
             this.txtNota1.Name = "txtNota1";
             this.txtNota1.Size = new Size(200, 20);
             this.txtNota1.TabIndex = 1;
-            this.txtNota1.PlaceholderText = "Nota do 1º Bimestre:";
+            this.txtNota1.PlaceholderText = "Nota do 1º Semestre:";
 
             // Configuração do TextBox de Nota2
             this.txtNota2.Location = new Point(100, 110);
             this.txtNota2.Name = "txtNota2";
             this.txtNota2.Size = new Size(200, 20);
             this.txtNota2.TabIndex = 2;
-            this.txtNota2.PlaceholderText = "Nota do 2º Bimestre:";
+            this.txtNota2.PlaceholderText = "Nota do 2º Semestre:";
 
             // Configuração da Label de erro do Nome
             this.lblNomeErro.AutoSize = true;
@@ -71,7 +72,7 @@ namespace teste4
             this.lblNota1Erro.Name = "lblNota1Erro";
             this.lblNota1Erro.Size = new Size(100, 13);
             this.lblNota1Erro.TabIndex = 4;
-            this.lblNota1Erro.Text = "A nota é obrigatória";
+            this.lblNota1Erro.Text = "A nota é obrigatória.";
 
             // Configuração da Label de erro da Nota2
             this.lblNota2Erro.AutoSize = true;
@@ -105,9 +106,10 @@ namespace teste4
             this.lblResultado.Location = new Point(100, 190);
             this.lblResultado.Name = "lblResultado";
             this.lblResultado.Size = new Size(0, 13);
+            this.lblResultado.TabIndex = 8;
 
             // Configuração do Formulário
-            this.ClientSize = new Size(400, 250);
+            this.ClientSize = new Size(500, 250);
             this.Controls.Add(this.lblResultado);
             this.Controls.Add(this.btnEnviar);
             this.Controls.Add(this.btnLimpar);
@@ -123,75 +125,75 @@ namespace teste4
 
         private void btnLimpar_Click(object sender, EventArgs e)
         {
-            txtNome.Text = "";
-            txtNota1.Text = "";
-            txtNota2.Text = "";
-            lblResultado.Text = "";
-            lblNomeErro.Visible = false;
-            lblNota1Erro.Visible = false;
-            lblNota2Erro.Visible = false;
+            LimparCampos();
         }
 
         private void btnEnviar_Click(object sender, EventArgs e)
         {
             string nome = txtNome.Text;
-            string nota1 = txtNota1.Text;
-            string nota2 = txtNota2.Text;
+            string nota1Text = txtNota1.Text;
+            string nota2Text = txtNota2.Text;
 
-            bool camposPreenchidos = true;
+            bool camposValidos = true;
 
             if (string.IsNullOrEmpty(nome))
             {
                 lblNomeErro.Visible = true;
-                camposPreenchidos = false;
+                camposValidos = false;
             }
             else
             {
                 lblNomeErro.Visible = false;
             }
 
-            if (string.IsNullOrEmpty(nota1))
+            if (string.IsNullOrEmpty(nota1Text))
             {
                 lblNota1Erro.Visible = true;
-                camposPreenchidos = false;
+                camposValidos = false;
             }
             else
             {
                 lblNota1Erro.Visible = false;
             }
 
-            if (string.IsNullOrEmpty(nota2))
+            if (string.IsNullOrEmpty(nota2Text))
             {
                 lblNota2Erro.Visible = true;
-                camposPreenchidos = false;
+                camposValidos = false;
             }
             else
             {
                 lblNota2Erro.Visible = false;
             }
 
-            if (camposPreenchidos)
+            if (camposValidos)
             {
-                double media = (Convert.ToDouble(nota1) + Convert.ToDouble(nota2)) / 2;
-                string status;
+                double nota1 = double.Parse(nota1Text);
+                double nota2 = double.Parse(nota2Text);
+                double media = (nota1 + nota2) / 2;
 
-                if (media < 6.5)
+                if (media >= 6.5)
                 {
-                    lblResultado.ForeColor = Color.Red;
-                    status = "Reprovado";
+                    lblResultado.Text = "Status do aluno: Aprovado";
+                    lblResultado.ForeColor = Color.Green;
                 }
                 else
                 {
-                    lblResultado.ForeColor = Color.Green;
-                    status = "Aprovado";
+                    lblResultado.Text = "Status do aluno: Reprovado";
+                    lblResultado.ForeColor = Color.Red;
                 }
+            }
+        }
 
-                lblResultado.Text = "Status do Aluno: " + status;
-            }
-            else
-            {
-                lblResultado.Text = "Nota não enviada.";
-            }
+        private void LimparCampos()
+        {
+            txtNome.Clear();
+            txtNota1.Clear();
+            txtNota2.Clear();
+            lblNomeErro.Visible = false;
+            lblNota1Erro.Visible = false;
+            lblNota2Erro.Visible = false;
+            lblResultado.Text = string.Empty;
         }
     }
 }

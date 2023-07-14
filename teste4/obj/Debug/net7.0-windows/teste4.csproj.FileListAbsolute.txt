@@ -1,0 +1,15 @@
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\bin\Debug\net7.0-windows\teste4.exe
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\bin\Debug\net7.0-windows\teste4.deps.json
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\bin\Debug\net7.0-windows\teste4.runtimeconfig.json
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\bin\Debug\net7.0-windows\teste4.dll
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\bin\Debug\net7.0-windows\teste4.pdb
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\obj\Debug\net7.0-windows\teste4.csproj.AssemblyReference.cache
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\obj\Debug\net7.0-windows\teste4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\obj\Debug\net7.0-windows\teste4.AssemblyInfoInputs.cache
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\obj\Debug\net7.0-windows\teste4.AssemblyInfo.cs
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\obj\Debug\net7.0-windows\teste4.csproj.CoreCompileInputs.cache
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\obj\Debug\net7.0-windows\teste4.dll
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\obj\Debug\net7.0-windows\refint\teste4.dll
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\obj\Debug\net7.0-windows\teste4.pdb
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\obj\Debug\net7.0-windows\teste4.genruntimeconfig.cache
+C:\Users\letba\OneDrive\Área de Trabalho\testesguardar\teste4\obj\Debug\net7.0-windows\ref\teste4.dll

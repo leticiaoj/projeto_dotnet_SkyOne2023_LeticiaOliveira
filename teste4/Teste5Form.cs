@@ -1,6 +1,9 @@
 using System;
 using System.Drawing;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+using System.IO;
+using MySql.Data.MySqlClient;
 
 namespace teste4
 {
@@ -182,6 +185,38 @@ namespace teste4
                     lblResultado.Text = "Status do aluno: Reprovado";
                     lblResultado.ForeColor = Color.Red;
                 }
+                // Salvar as informações em um banco de dados
+                string connectionString = "sua_string_de_conexao_mysql";
+                using (MySqlConnection connection = new MySqlConnection(connectionString))
+                {
+                    try
+                    {
+                        connection.Open();
+
+                        string query = "INSERT INTO tb_alunos (nome, nota1, nota2) VALUES (@nome, @nota1, @nota2)";
+                        MySqlCommand command = new MySqlCommand(query, connection);
+                        command.Parameters.AddWithValue("@nome", nome);
+                        command.Parameters.AddWithValue("@nota1", nota1);
+                        command.Parameters.AddWithValue("@nota2", nota2);
+                        command.ExecuteNonQuery();
+
+                        MessageBox.Show("As informações foram salvas no banco de dados.", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        // Limpa os campos após salvar
+                        LimparCampos();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Ocorreu um erro ao salvar as informações no banco de dados: " + ex.Message, "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+
+                // Salvar as informações em um JSON
+                string jsonFilePath = "caminho_do_arquivo_json";
+                Aluno aluno = new Aluno(nome, nota1, nota2);
+                string alunoJson = JsonConvert.SerializeObject(aluno);
+
+                File.WriteAllText(jsonFilePath, alunoJson);
             }
         }
 
@@ -194,6 +229,20 @@ namespace teste4
             lblNota1Erro.Visible = false;
             lblNota2Erro.Visible = false;
             lblResultado.Text = string.Empty;
+        }
+    }
+
+    public class Aluno
+    {
+        public string Nome { get; set; }
+        public double Nota1 { get; set; }
+        public double Nota2 { get; set; }
+
+        public Aluno(string nome, double nota1, double nota2)
+        {
+            Nome = nome;
+            Nota1 = nota1;
+            Nota2 = nota2;
         }
     }
 }

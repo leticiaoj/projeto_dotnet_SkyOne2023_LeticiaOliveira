@@ -1,7 +1,7 @@
 # Desafio .NET proposto pela Sky.One
 
 Projeto desenvolvido com C# e MySQL, seguindo instruções da Sky.One.
-A proposta foi resolver testes voltados às médias de alunos, como apresentado a seguir:
+A proposta foi resolver testes relacionados ao registro de notas de alunos, como apresentado a seguir:
 
 ![alt text](https://i.imgur.com/4DeENvv.png)
 

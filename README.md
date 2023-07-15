@@ -3,9 +3,9 @@
 Projeto desenvolvido com C# e MySQL, seguindo instruções da Sky.One.
 A proposta foi resolver testes relacionados ao registro de notas de alunos, como apresentado a seguir:
 
-![alt text](https://i.imgur.com/4DeENvv.png)
+![alt text](https://i.imgur.com/HuexSdv.png)
 
-![alt text](https://i.imgur.com/QOJ6E9K.png)
+![alt text](https://i.imgur.com/3zDcM9m.png)
 
 ![alt text](https://i.imgur.com/ZBXkm2Y.png)
 

@@ -1,4 +1,4 @@
-# ☁️ Desafio .NET proposto pela Sky.One ☁️
+# Desafio .NET proposto pela Sky.One ☁️
 
 Projeto desenvolvido com C# e MySQL, seguindo instruções da Sky.One.
 A proposta foi resolver testes relacionados ao registro de notas de alunos, como apresentado a seguir:

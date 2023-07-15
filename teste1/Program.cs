@@ -6,4 +6,4 @@ decimal notaSemestre2 = Convert.ToDecimal(Console.ReadLine());
 
 decimal mediaAluno = (notaSemestre1 + notaSemestre2) / 2;
 
-Console.WriteLine("Sua média é de " + mediaAluno.ToString("0.00"));
+Console.WriteLine("Sua média é " + mediaAluno.ToString("0.00"));

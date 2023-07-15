@@ -26,7 +26,7 @@ while (true)
     Console.WriteLine($"Nome: {nome}");
     Console.WriteLine($"Quantidade de provas: {quantidadeProvas}");
     Console.WriteLine($"Total de nota: {totalNotas}");
-    Console.WriteLine($"Sua média é de {media.ToString("0.##")}\n");
+    Console.WriteLine($"Sua média é {media.ToString("0.##")}\n");
 }
 
 Console.WriteLine("Encerrando o programa. Pressione qualquer tecla para sair...");
